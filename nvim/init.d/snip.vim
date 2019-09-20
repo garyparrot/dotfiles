@@ -1,0 +1,1 @@
+" ActivateAddons vim - snippets snipmate

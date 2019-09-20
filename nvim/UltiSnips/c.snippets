@@ -1,0 +1,43 @@
+snippet inittlpi "linux programming"
+/******************************************************************************
+*                    The Linux Programming Interface practices.
+* File:             `!v expand("%:t")`
+*
+* Author:           ${0:garyparrot}
+* Created:          `!v strftime("%Y/%m/%d")`
+* Description:      ${1}
+******************************************************************************/
+
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
+
+#include "tlpi_hdr.h"
+
+int main(int argc, const char *argv[]){
+	${2}
+	return 0;
+}
+endsnippet
+	
+
+snippet ccom "comment"
+/* ${0} */
+endsnippet
+	
+snippet lsysconf "linux sysconf"
+sysconf(${0})
+endsnippet
+
+snippet iferror "if error" b
+if((${1:expression}) == ${2:-1})
+	${3:// error handle}
+endsnippet
+
+snippet Tab_trigger "Description" b
+
+endsnippet
