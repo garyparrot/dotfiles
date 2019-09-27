@@ -397,6 +397,8 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+    awful.key({}, "#121" , function() volumeWidget.volumeManager:toggleMute() end,
+              {description="Mute", group = "Function"}),
     awful.key({ modkey, "Mod1" }, "l", function() awful.spawn("i3lock-fancy") end,
               {description="鎖定螢幕", group = "screen"}),
     awful.key({ modkey, "Control"}, "F1", function() xrandr.xrandr() end),

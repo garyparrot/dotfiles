@@ -168,4 +168,6 @@ end
 
 -- }}}
 
-return setmetatable(VolumeWidget,{ __call = VolumeWidget.create })
+local utility = { volumeManager = VolumeManager }
+
+return setmetatable(VolumeWidget,{ __call = VolumeWidget.create, __index = utility })
