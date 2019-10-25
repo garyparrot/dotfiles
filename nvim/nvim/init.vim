@@ -2,6 +2,7 @@
 :set cursorcolumn cursorline
 :set tabstop=4 shiftwidth=4 expandtab mouse=n laststatus=2
 :set foldmethod=marker
+:set modeline
 
 :let g:nvim='~/.config/nvim/'
 
@@ -18,7 +19,9 @@
 
 call plug#begin('~/.nvim/plugged')
 
-Plug 'vim-syntastic/syntastic'
+Plug 'harenome/vim-mipssyntax'
+Plug 'joshdick/onedark.vim'
+" Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/vim-easy-align'
 Plug '/usr/local/share/fzf'
 Plug 'junegunn/fzf.vim'

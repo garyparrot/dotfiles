@@ -24,67 +24,77 @@ theme.font          = "Ubuntu 9" -- "ABeeZee 8"--"FreeSans 8.7"
 theme.titlebars_enabled = true
 theme.rofi_theme    = config_path .. "configs/rofi_drun.rasi"
 
--- Client
-theme.border_width  = dpi(0)
-theme.useless_gap   = dpi(3)
-theme.border_normal = "#eeeeee"
-theme.border_focus  = "#000000"
-theme.border_marked = "#91231c"
+function RedForces()
+    -- Default Color scheme setup {{{
 
--- Titlebar
-theme.titlebar_bg_normal = "#2c2c2cff"
-theme.titlebar_bg_focus  = "#1c1c24ff"
-theme.titlebar_fg_normal = "#9f9f9fff"
-theme.titlebar_icon_bg   = "#ff3a3aff"
-theme.titlebar_button_bg = "#383838ff"
+    -- Client
+    theme.border_width  = dpi(0)
+    theme.useless_gap   = dpi(3)
+    theme.border_normal = "#eeeeee"
+    theme.border_focus  = "#000000"
+    theme.border_marked = "#91231c"
 
--- Wibar
-theme.wibar_bg = "#1c1c24ff"
+    -- Titlebar
+    theme.titlebar_bg_normal = "#2c2c2cff"
+    theme.titlebar_bg_focus  = "#1c1c24ff"
+    theme.titlebar_fg_normal = "#9f9f9fff"
+    theme.titlebar_icon_bg   = "#ff3a3aff"
+    theme.titlebar_button_bg = "#383838ff"
 
--- Tag list
-theme.taglist_bg_focus = "#ff2a2aff"
-theme.taglist_bg_occupied = "#ba524aff" -- "#370909ff"
-theme.taglist_bg_empty = "#383838ff"
-theme.taglist_font = theme.font_nerd
+    -- Wibar
+    theme.wibar_bg = "#1c1c24ff"
 
--- Task list
-theme.tasklist_bg_focus = "#ff2a2aff"
-theme.tasklist_bg_normal = "#383838ff"
-theme.tasklist_bg_urgent = "#d35f8dff"
-theme.tasklist_bg_minimize = "#a41010ff"
-theme.tasklist_shape = gears.shape.powerline
-theme.tasklist_spacing = -12
+    -- Tag list
+    theme.taglist_bg_focus = "#ff2a2aff"
+    theme.taglist_bg_occupied = "#ba524aff" -- "#370909ff"
+    theme.taglist_bg_empty = "#383838ff"
+    theme.taglist_font = theme.font_nerd
 
--- System tray
-theme.bg_systray = "#383838ff"
+    -- Task list
+    theme.tasklist_bg_focus = "#ff2a2aff"
+    theme.tasklist_bg_normal = "#383838ff"
+    theme.tasklist_bg_urgent = "#d35f8dff"
+    theme.tasklist_bg_minimize = "#a41010ff"
+    theme.tasklist_shape = gears.shape.powerline
+    theme.tasklist_spacing = -12
 
--- Menu
-theme.menu_submenu = ">"
-theme.menu_bg_normal= "#38383888"
-theme.menu_bg_focus = "#ff2a2a88"
-theme.menu_height = dpi(16)
-theme.menu_width  = dpi(120)
+    -- System tray
+    theme.bg_systray = "#383838ff"
 
---Prompt Box
-theme.prompt_bg = "#1c1c24ff"
+    -- Menu
+    theme.menu_submenu = ">"
+    theme.menu_bg_normal= "#38383888"
+    theme.menu_bg_focus = "#ff2a2a88"
+    theme.menu_height = dpi(16)
+    theme.menu_width  = dpi(120)
 
-theme.status_bar_bg = "#383838ff"
+    --Prompt Box
+    theme.prompt_bg = "#1c1c24ff"
 
--- Default 
-theme.bg_normal     = "#1c1c24ff"
-theme.bg_focus      = "#ff2a2aff"
-theme.bg_urgent     = "#ff3d3dbb"
-theme.bg_minimize   = "#3261a899"
-theme.bg_systray    = theme.bg_normal
-theme.hotkeys_bg = "#000000ee"
-
-theme.fg_normal     = "#cccccc"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+    theme.status_bar_bg = "#383838ff"
 
 
+    -- Default 
+    theme.bg_normal     = "#1c1c24ff"
+    theme.bg_focus      = "#ff2a2aff"
+    theme.bg_urgent     = "#ff3d3dbb"
+    theme.bg_minimize   = "#3261a899"
+    theme.bg_systray    = theme.bg_normal
+    theme.hotkeys_bg = "#000000ee"
 
+    theme.fg_normal     = "#cccccc"
+    theme.fg_focus      = "#ffffff"
+    theme.fg_urgent     = "#ffffff"
+    theme.fg_minimize   = "#ffffff"
+
+    -- }}}
+end
+
+-- The colorscheme to pick up
+
+ColorScheme = RedForces
+
+ColorScheme()
 
 -- Variables set for theming notifications:
 -- notification_font
