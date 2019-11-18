@@ -44,6 +44,9 @@ local autorunApps = {
     "bash -c 'pgrep conky || conky'"
 }
 
+local rofiBooks = function()
+    awful.spawn("rofi-books")
+end
 local rofiTODOlist = function()
     awful.spawn("rofi -theme " .. beautiful.rofi_theme .. " -modi TODO:todo.sh -key-todo SuperL+t -show TODO")
 end
@@ -254,6 +257,8 @@ awful.screen.connect_for_each_screen(function(s)
     -- Custom Scritp
     --  溜
     local names = {"","","","","","","","",""}
+    -- local names = {"壹", "貳", "參", "肆", "伍", "陸", "柒", "捌", "玖" }
+    -- local names = {"一", "二", "三", "四", "五", "六", "七", "八", "九" }
     local layouts = {
         awful.layout.suit.floating,
         awful.layout.suit.tile,
@@ -475,6 +480,8 @@ globalkeys = gears.table.join(
               {description = "quit awesome", group = "awesome"}),
     awful.key({ modkey,  }, "t", rofiTODOlist,
               { description = "rofi TODO list", group = "launcher" }),
+    awful.key({ modkey,  }, "b", rofiBooks,
+              { description = "rofi book list", group = "launcher" }),
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,

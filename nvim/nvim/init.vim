@@ -19,6 +19,8 @@
 
 call plug#begin('~/.nvim/plugged')
 
+
+Plug 'justinmk/vim-sneak'
 Plug 'harenome/vim-mipssyntax'
 Plug 'joshdick/onedark.vim'
 " Plug 'vim-syntastic/syntastic'
@@ -26,17 +28,15 @@ Plug 'junegunn/vim-easy-align'
 Plug '/usr/local/share/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
-Plug 'SkyLeach/pudb.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'MarcWeber/vim-addon-manager'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'vim-airline/vim-airline-themes'
+Plug 'file:///home/garyparrot/Programming/vim-airline-RedDope'
 Plug 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
@@ -52,6 +52,4 @@ for f in split(glob('~/.config/nvim/init.d/*.vim'),'\n')
 	exe 'source' f
 endfor
 
-if filereadable("./init.vim")
-    source ./init.vim
-endif
+set cmdheight=1

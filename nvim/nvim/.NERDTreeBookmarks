@@ -1,2 +1,3 @@
 config ~/.config
+nvim_config ~/.config/nvim/init.vim
 

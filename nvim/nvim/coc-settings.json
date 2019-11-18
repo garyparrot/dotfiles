@@ -1,3 +1,7 @@
 {
-    "suggest.noselect": false
+    "suggest.noselect": false,
+    "python.autoComplete.addBrackets": true,
+    "json.format.enable": false,
+    "python.formatting.provider": "autopep8",
+    "python.jediPath": ""
 }
