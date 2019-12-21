@@ -74,6 +74,18 @@
 :augroup END
 " }}}
 
+" Org {{{
+:augroup GoNvim
+:autocmd FileType org :let maplocalleader="-"
+:augroup END
+" }}}
+
+" rust {{{
+:augroup GoNvim
+:autocmd Filetype rust :nnoremap <buffer> <F5> :belowright split term://cargo run<cr> 
+:augroup END
+" }}}
+
 :augroup Lua
 :autocmd!
 :autocmd Filetype lua :nnoremap <F5> :split term://lua %<cr>

@@ -20,6 +20,7 @@
 call plug#begin('~/.nvim/plugged')
 
 
+Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'harenome/vim-mipssyntax'
 Plug 'joshdick/onedark.vim'
@@ -43,6 +44,7 @@ Plug 'morhetz/gruvbox'
 Plug 'iCyMind/NeoSolarized'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ryanoasis/vim-devicons'
+Plug 'jceb/vim-orgmode'
 
 call plug#end()
 

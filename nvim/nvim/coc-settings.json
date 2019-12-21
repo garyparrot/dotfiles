@@ -1,7 +1,24 @@
 {
+    "suggest.maxCompleteItemCount": 1500,
     "suggest.noselect": false,
+    "emmet.includeLanguages": { "javascript": "javascriptreact" },
+    "emmet.syntaxProfiles": { "javascript": "jsx" },
+    "html.filetypes": [
+        "html",
+        "handlebars",
+        "javascript"
+    ],
     "python.autoComplete.addBrackets": true,
     "json.format.enable": false,
     "python.formatting.provider": "autopep8",
-    "python.jediPath": ""
+    "python.jediPath": "",
+    "snippets.ultisnips.directories": [
+        "UltiSnips",
+        "~/.nvim/plugged/coc-snippets/tests/snippets"
+    ],
+    "snippets.extends": {
+        "javascriptreact": ["javascript-jsdoc","javascript-jsdoc"],
+        "typescriptreact": [ "javascript" ],
+        "typescript": ["javascript"]
+    }
 }
