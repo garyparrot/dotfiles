@@ -11,8 +11,8 @@ local function get_max()
     if not file then error(msg) end
 
     local value = file:read("n")
-    if not value then error("Failed to read content of " .. maxb_file) end
     file:close()
+    if not value then error("Failed to read content of " .. maxb_file) end
 
     max_buf = value
     return value
@@ -23,8 +23,8 @@ local function get_brightness()
     if not file then error(msg) end
 
     local value = file:read("n")
-    if not value then error("Faile to read content of " .. b_file) end
     file:close()
+    if not value then error("Faile to read content of " .. b_file) end
 
     return value
 end

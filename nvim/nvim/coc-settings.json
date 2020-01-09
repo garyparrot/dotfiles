@@ -19,6 +19,7 @@
     "snippets.extends": {
         "javascriptreact": ["javascript-jsdoc","javascript-jsdoc"],
         "typescriptreact": [ "javascript" ],
-        "typescript": ["javascript"]
+        "typescript": ["javascript"],
+        "python": [ "python" ]
     }
 }

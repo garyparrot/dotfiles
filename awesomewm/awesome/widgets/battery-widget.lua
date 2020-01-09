@@ -120,10 +120,12 @@ end
 function battery_widget:discover()
     local pow      = "/sys/class/power_supply/"
     local adapters = { Battery = {}, UPS = {}, Mains = {}, USB = {} }
-    for adapter in io.popen("ls -1 " .. pow):lines() do
+    local powers = io.popen("ls -1 " .. pow):lines() 
+    for adapter in powers:line() do
         local type = read_trim(pow .. adapter .. "/type")
         table.insert(adapters[type], adapter)
     end
+    powers:close()
     return adapters.Battery, adapters.Mains, adapters.USB, adapters.UPS
 end
 

@@ -29,8 +29,8 @@
 " Python {{{
 :augroup PythonNvim
 :autocmd!
-:autocmd FileType python :nnoremap <buffer> <F5> :vsplit term://python3.7 %<cr> :startinsert<cr>
-:autocmd FileType python :nnoremap <buffer> <F6> :belowright split term://python3.7 %<cr> :startinsert<cr>
+:autocmd FileType python :nnoremap <buffer> <F5> :vsplit term://python3 %<cr> :startinsert<cr>
+:autocmd FileType python :nnoremap <buffer> <F6> :belowright split term://python3 %<cr> :startinsert<cr>
 :augroup END
 " }}}
 

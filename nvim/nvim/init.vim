@@ -19,7 +19,8 @@
 
 call plug#begin('~/.nvim/plugged')
 
-
+Plug 'mhinz/vim-startify'
+Plug 'psliwka/vim-smoothie'
 Plug 'honza/vim-snippets'
 Plug 'justinmk/vim-sneak'
 Plug 'harenome/vim-mipssyntax'

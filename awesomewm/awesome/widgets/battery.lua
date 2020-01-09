@@ -73,13 +73,17 @@ function PowerWatch:init()
     for line in drivers:lines() do
 
         -- Indicate type
-        local power_type = io.open(POWERSUPPLE_DIR..line.."/type"):read('*a')
+        local powerfile =  io.open(POWERSUPPLE_DIR..line.."/type")
+        local power_type = powerfile:read("*a")
         power_type, _ = string.gsub(power_type, '\n', '')
         print("Find", power_type, line)
 
         -- Put dir name to corresponding power supply category
         table.insert(self.power[power_type], {name = line})
+
+        powerfile:close()
     end
+    drivers:close()
 
     -- Setup timer and call it immediately
     self:changeInternval(10)
@@ -105,14 +109,16 @@ function PowerWatch:update()
 
     -- Test if main power is on
     for _,power in pairs(self.power.Mains) do
-        local powerOnline = io.open(POWERSUPPLE_DIR..power.name.."/online"):read(1) 
-        self.mainOnline = powerOnline == "1"
+        local powerOnline = io.open(POWERSUPPLE_DIR..power.name.."/online")
+        self.mainOnline = powerOnline:read(1) == "1"
+        powerOnline:close()
     end
 
     -- Retrieve capacity of each battery
     for _,power in pairs(self.power.Battery) do 
-        local powerCapacity = io.open(POWERSUPPLE_DIR..power.name.."/capacity"):read('*a')
-        power.capacity = tonumber(powerCapacity)
+        local powerCapacity = io.open(POWERSUPPLE_DIR..power.name.."/capacity")
+        power.capacity = tonumber(powerCapacity:read("*a"))
+        powerCapacity:close()
     end
 
     -- Callback
