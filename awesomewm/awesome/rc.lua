@@ -64,14 +64,6 @@ do
 end
 -- }}}
 
--- Client {{{
-client.connect_signal("property::geometry", function (c)
-  gears.timer.delayed_call(function()
-    gears.surface.apply_shape_bounding(c, gears.shape.octogon, 10)
-  end)
-end)
--- }}}
-
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
@@ -705,53 +697,63 @@ client.connect_signal("request::titlebars", function(c)
                                 return shape(cr,w,h);
                             end
 
-    awful.titlebar(c, {font = beautiful.font}) : setup {
-        { -- Left
-            {
-                widget = wibox.container.background,
-                shape = rrectangular_tag,
-                bg = beautiful.titlebar_icon_bg,
-                {
-                    widget = wibox.container.margin,
-                    right = 15,
-                    left = 8,
-                    awful.titlebar.widget.iconwidget(c),
-                }
-            },
-            spacing = -12,
-            buttons = buttons,
-            layout  = wibox.layout.fixed.horizontal
-        },
-        { -- Middle
-            { widget = wibox.container.margin, right = 4 },
-            { -- Title
-                align  = "left",
-                widget = awful.titlebar.widget.titlewidget(c)
-            },
-            buttons = buttons,
-            layout  = wibox.layout.fixed.horizontal
-        },
-        { -- Right
+    local title_left = { -- Left{{{
+        {
             widget = wibox.container.background,
-            shape = rectangular_tag,
-            bg = beautiful.titlebar_button_bg,
+            shape = rrectangular_tag,
+            bg = beautiful.titlebar_icon_bg,
             {
                 widget = wibox.container.margin,
-                right = 3,
-                left = 15,
-                {
-                    awful.titlebar.widget.floatingbutton (c),
-                    -- awful.titlebar.widget.maximizedbutton(c),
-                    awful.titlebar.widget.stickybutton   (c),
-                    -- awful.titlebar.widget.ontopbutton    (c),
-                    awful.titlebar.widget.closebutton    (c),
-                    layout = wibox.layout.fixed.horizontal()
-                }
+                right = 15,
+                left = 8,
+                awful.titlebar.widget.iconwidget(c),
             }
         },
+        spacing = -12,
+        buttons = buttons,
+        layout  = wibox.layout.fixed.horizontal
+    }--}}}
+    local title_middle = { -- Middle{{{
+        { widget = wibox.container.margin, right = 4 },
+        { -- Title
+            align  = "left",
+            widget = awful.titlebar.widget.titlewidget(c)
+        },
+        buttons = buttons,
+        layout  = wibox.layout.fixed.horizontal
+    }--}}}
+    local title_right = { -- Right{{{
+        widget = wibox.container.background,
+        shape = rectangular_tag,
+        bg = beautiful.titlebar_button_bg,
+        {
+            widget = wibox.container.margin,
+            right = 3,
+            left = 15,
+            {
+                awful.titlebar.widget.floatingbutton (c),
+                -- awful.titlebar.widget.maximizedbutton(c),
+                awful.titlebar.widget.stickybutton   (c),
+                -- awful.titlebar.widget.ontopbutton    (c),
+                awful.titlebar.widget.closebutton    (c),
+                layout = wibox.layout.fixed.horizontal()
+            }
+        }
+    }--}}}
+    awful.titlebar(c, {font = beautiful.font}) : setup {
+        title_left,
+        title_middle,
+        title_right,
         layout = wibox.layout.align.horizontal
     }
 end)
+
+client.connect_signal("property::geometry", function (c)
+  gears.timer.delayed_call(function()
+    gears.surface.apply_shape_bounding(c, gears.shape.octogon , 10)
+  end)
+end)
+
 
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
