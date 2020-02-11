@@ -4,22 +4,18 @@
 -- 載入額外寫的Script 
 
 local gears = require("gears")          -- Standard awesome library
-
 local config_path = gears.filesystem.get_configuration_dir()
-
 package.path = package.path .. ";" .. config_path .. "?.lua"
                             .. ";" .. config_path .. "widgets/?.lua"
 
 local awful = require("awful")
-
 local autofocus = require("awful.autofocus")
-
 local wibox = require("wibox")          -- Widget and layout library
 local beautiful = require("beautiful")  -- Theme handling library
-
 local naughty = require("naughty")      -- Notification library
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
+local utility = require("utility")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -30,7 +26,6 @@ require("awful.hotkeys_popup.keys")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- xrandr
-local xrandr = require("xrandr")
 local bctl = require("brightctrl")
 local battery_widget = require("battery-widget")
 local battery = require("battery")
@@ -40,25 +35,9 @@ local volumeWidget = require('volume')
 local autorun = true
 local autorunApps = {
     "bash -c 'pgrep compton || compton -b -f -c -G -o 0.5 --active-opacity 1 --blur-background-fixed -r 10'",
-    "bash -c 'pgrep nm-applet || nm-applet'",
-    "bash -c 'pgrep conky || conky'"
+    "bash -c 'pgrep nm-applet || nm-applet'", "bash -c 'pgrep conky || conky'"
 }
 
-local rofiBooks = function()
-    awful.spawn("rofi-books")
-end
-local rofiTODOlist = function()
-    awful.spawn("rofi -theme " .. beautiful.rofi_theme .. " -modi TODO:todo.sh -key-todo SuperL+t -show TODO")
-end
-local rofiRun = function()
-    awful.spawn("rofi -theme " .. beautiful.rofi_theme .. " -show run" )
-end
-local rofiDrun = function()
-    awful.spawn("rofi -theme " .. beautiful.rofi_theme .. " -show drun -show-icons" )
-end
-local rofiTranslate = function()
-    awful.spawn("rofi_trans")
-end
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -425,7 +404,7 @@ globalkeys = gears.table.join(
               {description="Network Menu", group = "Function"}),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="Translate", group = "Function"}),
-    awful.key({ modkey,           }, "q",      rofiTranslate,
+    awful.key({ modkey,           }, "q",      utility.rofiTranslate,
               {description="show help", group="awesome"}),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
@@ -480,9 +459,9 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
-    awful.key({ modkey,  }, "t", rofiTODOlist,
+    awful.key({ modkey,  }, "t", utility.rofiTODOlist,
               { description = "rofi TODO list", group = "launcher" }),
-    awful.key({ modkey,  }, "b", rofiBooks,
+    awful.key({ modkey,  }, "b", utility.rofiBooks,
               { description = "rofi book list", group = "launcher" }),
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -513,7 +492,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "r", rofiRun,
+    awful.key({ modkey },            "r", utility.rofiRun,
               {description = "run prompt", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -527,7 +506,7 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey }, "p", rofiDrun,
+    awful.key({ modkey }, "p", utility.rofiDrun,
               {description = "show the menubar", group = "launcher"})
 )
 

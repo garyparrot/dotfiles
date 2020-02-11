@@ -22,7 +22,6 @@ theme.font_nerd_big   = "Ubuntu Nerd Font 15"
 theme.font_small    = "Ubuntu 6"
 theme.font          = "Ubuntu 9" -- "ABeeZee 8"--"FreeSans 8.7"
 theme.titlebars_enabled = true
-theme.rofi_theme    = config_path .. "configs/rofi_drun.rasi"
 
 function RedForces()
     -- Default Color scheme setup {{{
