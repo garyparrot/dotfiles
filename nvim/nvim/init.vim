@@ -19,6 +19,7 @@
 
 call plug#begin('~/.nvim/plugged')
 
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'mhinz/vim-startify'
 Plug 'psliwka/vim-smoothie'
 Plug 'honza/vim-snippets'

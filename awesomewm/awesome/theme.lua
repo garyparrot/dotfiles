@@ -28,7 +28,7 @@ function RedForces()
 
     -- Client
     theme.border_width  = dpi(0)
-    theme.useless_gap   = dpi(3)
+    theme.useless_gap   = dpi(5)
     theme.border_normal = "#eeeeee"
     theme.border_focus  = "#000000"
     theme.border_marked = "#91231c"

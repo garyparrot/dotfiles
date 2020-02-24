@@ -34,7 +34,7 @@ local volumeWidget = require('volume')
 
 local autorun = true
 local autorunApps = {
-    "bash -c 'pgrep compton || compton -b -f -c -G -o 0.5 --active-opacity 1 --blur-background-fixed -r 10'",
+    "bash -c 'pgrep picom || picom -b'",
     "bash -c 'pgrep nm-applet || nm-applet'", "bash -c 'pgrep conky || conky'"
 }
 
@@ -451,8 +451,8 @@ globalkeys = gears.table.join(
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
-    awful.key({ modkey,  }, "t", utility.rofiTODOlist,
-              { description = "rofi TODO list", group = "launcher" }),
+    -- awful.key({ modkey,  }, "t", utility.rofiTODOlist,
+    --           { description = "rofi TODO list", group = "launcher" }),
     awful.key({ modkey,  }, "b", utility.rofiBooks,
               { description = "rofi book list", group = "launcher" }),
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -740,7 +740,7 @@ client.connect_signal("request::titlebars", function(c)
             }
         }
     }--}}}
-    awful.titlebar(c, {font = beautiful.font}) : setup {
+    awful.titlebar(c, {position="top", font = beautiful.font}) : setup {
         title_left,
         title_middle,
         title_right,
