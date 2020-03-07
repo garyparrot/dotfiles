@@ -34,31 +34,31 @@ function RedForces()
     theme.border_marked = "#91231c"
 
     -- Titlebar
-    theme.titlebar_bg_normal = "#2c2c2cff"
-    theme.titlebar_bg_focus  = "#1c1c24ff"
+    theme.titlebar_bg_normal = "#3b3122"
+    theme.titlebar_bg_focus  = "#4b3122"
     theme.titlebar_fg_normal = "#9f9f9fff"
-    theme.titlebar_icon_bg   = "#ff3a3aff"
-    theme.titlebar_button_bg = "#383838ff"
+    theme.titlebar_icon_bg   = "#ff8146"
+    theme.titlebar_button_bg = "#6a422e"
 
     -- Wibar
-    theme.wibar_bg = "#1c1c24ff"
+    theme.wibar_bg = "#2c1a0d"
 
     -- Tag list
-    theme.taglist_bg_focus = "#ff2a2aff"
-    theme.taglist_bg_occupied = "#ba524aff" -- "#370909ff"
-    theme.taglist_bg_empty = "#383838ff"
+    theme.taglist_bg_focus = "#ff8146"
+    theme.taglist_bg_occupied = "#933f13" 
+    theme.taglist_bg_empty = "#6a422e"
     theme.taglist_font = theme.font_nerd
 
     -- Task list
-    theme.tasklist_bg_focus = "#ff2a2aff"
-    theme.tasklist_bg_normal = "#383838ff"
+    theme.tasklist_bg_focus = "#ff8146"
+    theme.tasklist_bg_normal = "#3e372d"
     theme.tasklist_bg_urgent = "#d35f8dff"
-    theme.tasklist_bg_minimize = "#a41010ff"
+    theme.tasklist_bg_minimize = "#933f13"
     theme.tasklist_shape = gears.shape.powerline
     theme.tasklist_spacing = -12
 
     -- System tray
-    theme.bg_systray = "#383838ff"
+    theme.bg_systray = "#6a422e"
 
     -- Menu
     theme.menu_submenu = ">"
@@ -70,7 +70,7 @@ function RedForces()
     --Prompt Box
     theme.prompt_bg = "#1c1c24ff"
 
-    theme.status_bar_bg = "#383838ff"
+    theme.status_bar_bg = "#4b3122"
 
 
     -- Default 
