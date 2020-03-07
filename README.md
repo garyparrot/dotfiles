@@ -17,6 +17,7 @@ $ stow -t ~/.config fish
 $ stow -t ~/.config nvim
 $ stow -t ~/.config picom
 $ stow -t ~/.config rofi
+$ stow -t ~/.config kitty
 ```
 
 ## colorscheme
