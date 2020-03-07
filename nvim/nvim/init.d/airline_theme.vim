@@ -26,7 +26,7 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
 " let g:airline_theme='behelit'
-let g:airline_theme='RedDope'
+" let g:airline_theme='RedDope'
 
 let g:airline#extensions#coc#enabled = 1
 " let airline#extensions#coc#error_symbol = 'Error:'

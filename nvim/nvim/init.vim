@@ -3,6 +3,7 @@
 :set tabstop=4 shiftwidth=4 expandtab mouse=n laststatus=2
 :set foldmethod=marker
 :set modeline
+:set background=dark
 
 :let g:nvim='~/.config/nvim/'
 
