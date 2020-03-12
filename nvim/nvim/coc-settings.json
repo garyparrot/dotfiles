@@ -1,5 +1,6 @@
 {
     "suggest.maxCompleteItemCount": 1500,
+    "suggest.timeout": 500,
     "suggest.noselect": false,
     "emmet.includeLanguages": { "javascript": "javascriptreact" },
     "emmet.syntaxProfiles": { "javascript": "jsx" },
@@ -21,5 +22,21 @@
         "typescriptreact": [ "javascript" ],
         "typescript": ["javascript"],
         "python": [ "python" ]
+    },
+    "languageserver": {
+        "ccls":{
+            "command": "ccls",
+            "filetypes": [ "c", "cpp", "objc" , "objcpp" ],
+            "rootPatterns": [".ccls", "compile_commands.json",".git/",".hg/"],
+            "initializationOptions": {
+                "cache":{
+                    "directory":"/tmp/ccls"
+                }
+            }
+        },
+        "lua":{
+            "command": "lua-lsp",
+            "filetypes": ["lua"]
+        }
     }
 }

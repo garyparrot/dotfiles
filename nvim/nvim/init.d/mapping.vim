@@ -47,7 +47,7 @@
 :autocmd Filetype cpp :nnoremap <buffer> <F4> :belowright split %.input<cr>
 :autocmd FileType cpp :set makeprg=g++\ %
 :autocmd Filetype cpp :nnoremap <F5> :make<cr>
-" :autocmd Filetype cpp :nnoremap <buffer> <F5> :belowright split term://sh -c 'echo \"[F5 Debug/Standard Input] Compiling your code...\" ; g++ % -g && echo \"Done, the program already started. Insert mode on\" && ./a.out'<cr> :startinsert<cr>
+:autocmd Filetype cpp :nnoremap <buffer> <F5> :belowright split term://sh -c 'echo \"[F5 Debug/Standard Input] Compiling your code...\" ; g++ % -g && echo \"Done, the program already started. Insert mode on\" && ./a.out'<cr> :startinsert<cr>
 :autocmd Filetype cpp :nnoremap <buffer> <F6> :belowright split term://sh -c 'echo \"[F6 Debug/Input File] Compiling your code...\" ; g++ % -g && echo \"Done, the program already started. Testing from input file\" && ./a.out < %.input'<cr> 
 :autocmd Filetype cpp :nnoremap <buffer> <F7> :belowright split term://sh -c 'echo \"[F7 OJ/Input File] Compiling your code...\" ; g++ % -g -DONLINE_JUDGE && echo \"Done, the program already started. Testing from input file\" && ./a.out < %.input'<cr> 
 :autocmd Filetype cpp :nnoremap <buffer> <F8> :belowright split term://sh -c 'echo \"[F8 Debug/GDB] Compiling your code...\" ; g++ % -g && gdb ./a.out'<cr> :startinsert<cr>
@@ -58,8 +58,8 @@
 :augroup CNvim
 :autocmd!
 :autocmd FileType c :set tags+=/home/garyparrot/tags
-:autocmd FileType c :let &makeprg = "gcc % " . $lib
-:autocmd Filetype c :nnoremap <F5> :make<cr>
+:autocmd FileType c :let &makeprg = "make clean ; bear make"
+:autocmd Filetype c :nnoremap <F5> :make<cr>:NERDTreeRefreshRoot<cr>:CocRestart<cr>
 :autocmd Filetype c :nnoremap <F6> :belowright split term://./a.out<cr> :startinsert<cr>
 " :autocmd Filetype c :nnoremap <F5> :belowright split term://compile_linux.sh % <cr>:startinsert<cr>'
 :autocmd Filetype c :nnoremap <leader>ifw Iif((<esc>A))<esc>
