@@ -19,7 +19,9 @@
 
 call plug#begin('~/.nvim/plugged')
 
+Plug 'camspiers/animate.vim'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'liuchengxu/vista.vim'
 Plug 'mhinz/vim-startify'
 Plug 'psliwka/vim-smoothie'
 Plug 'honza/vim-snippets'

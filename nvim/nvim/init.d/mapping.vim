@@ -18,6 +18,7 @@
 :nnoremap , <<
 :nnoremap << :cprev<cr>
 :nnoremap >> :cnext<cr>
+":inoremap <c-space> <esc>o
 
 " Plugin {{{
 :augroup Plugin_Mapping
@@ -45,7 +46,7 @@
 :augroup CPPNvim
 :autocmd!
 :autocmd Filetype cpp :nnoremap <buffer> <F4> :belowright split %.input<cr>
-:autocmd FileType cpp :set makeprg=g++\ %
+:autocmd FileType cpp :let &makeprg = "bear make"
 :autocmd Filetype cpp :nnoremap <F5> :make<cr>
 :autocmd Filetype cpp :nnoremap <buffer> <F5> :belowright split term://sh -c 'echo \"[F5 Debug/Standard Input] Compiling your code...\" ; g++ % -g && echo \"Done, the program already started. Insert mode on\" && ./a.out'<cr> :startinsert<cr>
 :autocmd Filetype cpp :nnoremap <buffer> <F6> :belowright split term://sh -c 'echo \"[F6 Debug/Input File] Compiling your code...\" ; g++ % -g && echo \"Done, the program already started. Testing from input file\" && ./a.out < %.input'<cr> 
