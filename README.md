@@ -1,5 +1,11 @@
 # Dotfiles
 
+## Screenshot
+
+[link](https://imgur.com/tJMJFDr)
+
+## How to use
+
 This dot file is managed by ``stow``, link each directory to specific path.
 
 ## restore
