@@ -376,6 +376,8 @@ globalkeys = gears.table.join(
     awful.key({}, "#121" , function() volumeWidget.volumeManager:toggleMute() end,
               {description="Mute", group = "Function"}),
     awful.key({}, "#246" , function() awful.spawn("xdotool mousedown 1") end, function() awful.spawn("xdotool mouseup 1") end,
+              {description="Mouse right down/up", group = "mouse"}),
+    awful.key({ "Mod1" }, "F1" , function() awful.spawn("sh -c 'xdotool mousedown 3; sleep 5; xdotool mouseup 3'") end,
               {description="Mouse left click", group = "mouse"}),
     awful.key({ modkey, "Mod1" }, "l", function() awful.spawn("i3lock-fancy") end,
               {description="鎖定螢幕", group = "screen"}),

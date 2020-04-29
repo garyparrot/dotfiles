@@ -19,6 +19,8 @@
 
 call plug#begin('~/.nvim/plugged')
 
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'camspiers/animate.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'liuchengxu/vista.vim'
@@ -53,6 +55,8 @@ Plug 'jceb/vim-orgmode'
 call plug#end()
 
 " }}}
+
+:let mapleader='-'
 
 for f in split(glob('~/.config/nvim/init.d/*.vim'),'\n')
 	exe 'source' f

@@ -6,7 +6,6 @@
 " :nnoremap <c-Tab> :silent execute ':NERDTreeFocus'<cr>
 :nnoremap <space> :nohlsearch<cr><space>
 
-:let mapleader='-'
 :nnoremap <Leader>nt :e ~/.note.md<cr>
 :nnoremap <Leader>ev :vsp ~/.config/nvim/init.vim<cr>
 :nnoremap <Leader>sv :source ~/.config/nvim/init.vim<cr>
