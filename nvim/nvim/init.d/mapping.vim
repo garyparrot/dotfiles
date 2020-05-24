@@ -10,13 +10,12 @@
 :nnoremap <Leader>ev :vsp ~/.config/nvim/init.vim<cr>
 :nnoremap <Leader>sv :source ~/.config/nvim/init.vim<cr>
 :nnoremap <Leader>speak :call jobstart('transsz --speak ' . expand("<cword>"))
+:nnoremap <C-w>t :belowright sp \| terminal<cr>:resize 8<cr>:set wfh<cr><C-w><S-j>
+:nnoremap <Leader><tab> :Files<cr>
+:nnoremap <Leader>cp "+y
 :map <F1> <nop>
 :imap <F1> <nop>
 :nnoremap <esc> :
-:nnoremap <tab> >>
-:nnoremap , <<
-:nnoremap << :cprev<cr>
-:nnoremap >> :cnext<cr>
 ":inoremap <c-space> <esc>o
 
 " Plugin {{{
@@ -29,8 +28,9 @@
 " Python {{{
 :augroup PythonNvim
 :autocmd!
-:autocmd FileType python :nnoremap <buffer> <F5> :vsplit term://python3 %<cr> :startinsert<cr>
-:autocmd FileType python :nnoremap <buffer> <F6> :belowright split term://python3 %<cr> :startinsert<cr>
+" :autocmd FileType python :nnoremap <buffer> <leader><F5> :call jobstart(["pydbgp", "-d", "localhost:9000", expand('%:p')])<cr> 
+" :autocmd FileType python :nnoremap <buffer> <F5> :vsplit term://python3 %<cr> :startinsert<cr>
+" :autocmd FileType python :nnoremap <buffer> <F6> :belowright split term://python3 %<cr> :startinsert<cr>
 :augroup END
 " }}}
 

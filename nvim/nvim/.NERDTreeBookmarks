@@ -1,3 +1,4 @@
 config ~/.config
 nvim_config ~/.config/nvim/init.vim
+nvim ~/.config/nvim
 

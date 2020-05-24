@@ -13,12 +13,14 @@
     "json.format.enable": false,
     "python.formatting.provider": "autopep8",
     "python.jediPath": "",
+    "python.jediEnabled": false,
+    "javascript.suggest.autoImports": true,
     "snippets.ultisnips.directories": [
         "UltiSnips",
         "~/.nvim/plugged/coc-snippets/tests/snippets"
     ],
     "snippets.extends": {
-        "javascriptreact": ["javascript-jsdoc","javascript-jsdoc"],
+        "javascriptreact": ["javascript-jsdoc","javascript"],
         "typescriptreact": [ "javascript" ],
         "typescript": ["javascript"],
         "python": [ "python" ]

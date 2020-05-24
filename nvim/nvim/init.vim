@@ -19,6 +19,10 @@
 
 call plug#begin('~/.nvim/plugged')
 
+Plug 'chr4/nginx.vim'
+Plug 'lervag/vimtex'
+Plug 'vim-vdebug/vdebug'
+Plug 'chemzqm/vim-jsx-improve'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'camspiers/animate.vim'
@@ -37,18 +41,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
 Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline-themes'
 Plug 'file:///home/garyparrot/Programming/vim-airline-RedDope'
 Plug 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'iCyMind/NeoSolarized'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jceb/vim-orgmode'
 
