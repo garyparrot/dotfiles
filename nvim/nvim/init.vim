@@ -6,9 +6,6 @@
 
 :let g:nvim='~/.config/nvim/'
 
-:augroup CNvimTag
-:autocmd Filetype c :set tags+=./tags
-:augroup END
 
 " There is some short link to other configuration.
 " Use shortcut <Ctrl-gf> to open it in new tab
@@ -19,42 +16,54 @@
 
 call plug#begin('~/.nvim/plugged')
 
-Plug 'chr4/nginx.vim'
-Plug 'lervag/vimtex'
-Plug 'vim-vdebug/vdebug'
-Plug 'chemzqm/vim-jsx-improve'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'camspiers/animate.vim'
+" Userful widget
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'liuchengxu/vista.vim'
 Plug 'mhinz/vim-startify'
-Plug 'psliwka/vim-smoothie'
-Plug 'honza/vim-snippets'
-Plug 'justinmk/vim-sneak'
-Plug 'harenome/vim-mipssyntax'
-Plug 'joshdick/onedark.vim'
-" Plug 'vim-syntastic/syntastic'
-Plug 'junegunn/vim-easy-align'
-Plug '/usr/local/share/fzf'
+
+" Useful tool
+Plug 'liuchengxu/vista.vim'
 Plug 'junegunn/fzf.vim'
-Plug 'majutsushi/tagbar'
-Plug 'Yggdroot/indentLine'
-Plug 'honza/vim-snippets'
-" Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Fancy
+Plug 'ryanoasis/vim-devicons'
+Plug 'psliwka/vim-smoothie'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'file:///home/garyparrot/Programming/vim-airline-RedDope'
-Plug 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
-Plug 'iCyMind/NeoSolarized'
+Plug 'pangloss/vim-javascript'
+
+" Syntax
+Plug 'harenome/vim-mipssyntax'
+Plug 'neoclide/jsonc.vim'
+Plug 'chr4/nginx.vim'
+Plug 'chemzqm/vim-jsx-improve'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'lifepillar/pgsql.vim'
+
+" Useful binding
+Plug 'justinmk/vim-sneak'
+Plug 'junegunn/vim-easy-align'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-surround'
+
+" Deprecated
+" Plug 'majutsushi/tagbar'
+" Plug 'lervag/vimtex'
+" Plug 'iCyMind/NeoSolarized'
 " Plug 'jiangmiao/auto-pairs'
-Plug 'ryanoasis/vim-devicons'
-Plug 'jceb/vim-orgmode'
+" Plug 'vim-syntastic/syntastic'
+" Plug 'SirVer/ultisnips'
+
+" Disabled
+" Plug 'camspiers/animate.vim'
+" Plug 'briancollins/vim-jst'
+" Plug 'philip-karlsson/bolt.nvim', { 'do': ':UpdateRemotePlugins' }
+
 
 call plug#end()
 

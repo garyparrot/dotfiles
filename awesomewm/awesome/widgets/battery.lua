@@ -23,6 +23,7 @@ local IconRule = {
     {  69, "  "  , "#deff3bff"}, 
     {  79, "  "  , "#93ff3bff"}, 
     {"full", " " ,"#55ff3bff","Mains" },
+    {"No battery", "" ,"#666666","Mains" },
     { 100, "  "  , "#55ff3bff"},
 }
 local powerWarningRule = {
@@ -117,8 +118,13 @@ function PowerWatch:update()
     -- Retrieve capacity of each battery
     for _,power in pairs(self.power.Battery) do 
         local powerCapacity = io.open(POWERSUPPLE_DIR..power.name.."/capacity")
-        power.capacity = tonumber(powerCapacity:read("*a"))
-        powerCapacity:close()
+        if powerCapacity ~= nil then
+            power.capacity = tonumber(powerCapacity:read("*a"))
+            powerCapacity:close()
+        else
+            power.capacity = "Unknown"
+        end
+
     end
 
     -- Callback
@@ -184,14 +190,19 @@ function PowerWidget:create(args)
         
         -- Update icon
         for _, rule in ipairs(IconRule) do
-            condition, icon, fcolor, ptype = table.unpack(rule)
-            if type(condition) == "number" and capacity <= condition then 
+            local condition, icon, fcolor, ptype = table.unpack(rule)
+            if type(condition) == type(capacity) and capacity <= condition then 
                 widget.markup = "<span foreground=\"".. fcolor .."\">"..
                                     icon .. " " .. capacity .. 
                                 "</span>"
                 break
             -- TODO: Implement External Power
-            elseif type(condition) == "string" and condition == "full" and capacity == 100 and mainOnline then
+            elseif type(condition) == type(capacity) and condition == "unknown" then
+                widget.markup = "<span foreground=\"".. fcolor .."\">"..
+                                    icon .. " No battery" ..
+                                "</span>"
+                break
+            elseif type(condition) == type(capacity) and condition == "full" and capacity == 100 and mainOnline then
                 widget.markup = "<span foreground=\"".. fcolor .."\">"..
                                     icon .. " Full" ..
                                 "</span>"

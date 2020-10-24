@@ -447,7 +447,7 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey, }, "g", function() awful.spawn("firefox") end,
+    awful.key({ modkey, }, "g", function() awful.spawn("brave") end,
               {description = "start chrome", group = "launcher"}),
     awful.key({ modkey, }, "i", function() awful.spawn("iceweasel") end,
               {description = "start chrome", group = "launcher"}),
@@ -654,6 +654,16 @@ awful.rules.rules = {
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
       }, properties = { titlebars_enabled = beautiful.titlebars_enabled }
+    },
+    {
+        rule = {
+            class = "jetbrains-studio",
+            name  = "^win[0-9]+$"
+        },
+        properties = {
+            placement = awful.placement.no_offscreen,
+            titlebars_enabled = false
+        }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.

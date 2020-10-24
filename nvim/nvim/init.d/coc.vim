@@ -44,6 +44,7 @@ if &loadplugins
       inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
     endif
 
+
     " Use `[g` and `]g` to navigate diagnostics
     nmap <silent> [g <Plug>(coc-diagnostic-prev)
     nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -53,6 +54,7 @@ if &loadplugins
     nmap <silent> gy <Plug>(coc-type-definition)
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
+
 
     " Use K to show documentation in preview window
     nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -133,5 +135,11 @@ if &loadplugins
     nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
     " Resume latest coc list
     nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+    " redo last operation
+    nnoremap <silent> <space>r  :<C-u>CocLast<CR>
+
+    nmap     <silent> <space>t  <Plug>(coc-terminal-toggle)<CR>
+
+    nmap     <silent> <space>b  :<C-u>CocList buffers<cr>
     
 endif

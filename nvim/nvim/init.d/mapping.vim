@@ -6,6 +6,9 @@
 " :nnoremap <c-Tab> :silent execute ':NERDTreeFocus'<cr>
 :nnoremap <space> :nohlsearch<cr><space>
 
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 :nnoremap <Leader>nt :e ~/.note.md<cr>
 :nnoremap <Leader>ev :vsp ~/.config/nvim/init.vim<cr>
 :nnoremap <Leader>sv :source ~/.config/nvim/init.vim<cr>
@@ -57,7 +60,8 @@
 " {{{ C
 :augroup CNvim
 :autocmd!
-:autocmd FileType c :set tags+=/home/garyparrot/tags
+" :autocmd FileType c :set tags+=/home/garyparrot/tags
+" :autocmd Filetype c :set tags+=./tags
 :autocmd FileType c :let &makeprg = "make clean ; bear make"
 :autocmd Filetype c :nnoremap <F5> :make<cr>:NERDTreeRefreshRoot<cr>:CocRestart<cr>
 :autocmd Filetype c :nnoremap <F6> :belowright split term://./a.out<cr> :startinsert<cr>
@@ -90,3 +94,17 @@
 :autocmd!
 :autocmd Filetype lua :nnoremap <F5> :split term://lua %<cr>
 :augroup END
+
+:augroup Typescript
+:autocmd!
+:autocmd FileType javascript :set shiftwidth=2 softtabstop=2 tabstop=2
+" :autocmd FileType typescript :set foldmethod=indent
+:augroup END
+
+:augroup Typescript
+:autocmd!
+:autocmd FileType typescript :set shiftwidth=2 softtabstop=2 tabstop=2
+" :autocmd FileType typescript :set foldmethod=indent
+:augroup END
+
+autocmd BufEnter * if &filetype == "json" | setlocal ft=jsonc | endif

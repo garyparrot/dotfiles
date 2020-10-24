@@ -1,15 +1,29 @@
 {
     "suggest.maxCompleteItemCount": 1500,
     "suggest.timeout": 500,
+    "sql.database": "postgresql",
     "suggest.noselect": false,
+    "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "vue", "typescript"],
     "emmet.includeLanguages": { "javascript": "javascriptreact" },
     "emmet.syntaxProfiles": { "javascript": "jsx" },
+    "eslint.run": "onSave",
+    "eslint.filetypes": [
+        "typescript",
+        "typescriptreact",
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ],
+    "tsserver.enableJavascript": false,
+    "tslint.jsEnable": false,
+    "tslint.run": "onSave",
     "html.filetypes": [
         "html",
         "handlebars",
         "javascript"
     ],
     "python.autoComplete.addBrackets": true,
+    "docker.enable": true,
     "json.format.enable": false,
     "python.formatting.provider": "autopep8",
     "python.jediPath": "",
