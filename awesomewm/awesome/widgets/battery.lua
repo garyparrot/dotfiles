@@ -186,6 +186,10 @@ function PowerWidget:create(args)
 
     -- Registe Power watch event
     PowerWatch:addListener(function(mainOnline, power)
+        if mainOnline == nil or power == nil or power.Battery == nil or power.Battery[1] == nil then
+            return
+        end
+
         local capacity = power.Battery[1].capacity
         
         -- Update icon

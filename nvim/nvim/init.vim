@@ -36,6 +36,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'file:///home/garyparrot/Programming/vim-airline-RedDope'
 Plug 'morhetz/gruvbox'
 Plug 'pangloss/vim-javascript'
+Plug 'pearofducks/ansible-vim'
 
 " Syntax
 Plug 'harenome/vim-mipssyntax'

@@ -1,4 +1,4 @@
-set -gx PATH ~/bin $PATH
+set -gx PATH ~/bin /usr/share/bcc/tools $PATH
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme uesr
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
@@ -14,3 +14,4 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 #     set -x "neofetched"
 # end
 
+source /usr/share/fish/functions/__fish_cancel_commandline.fish
