@@ -1,0 +1,18 @@
+---
+- name: "Creating artifact directory"
+  file:
+    path: "{{ artifact_directory }}"
+    state: directory
+    mode: '0755'
+
+- name: "Creating static artifacts"
+  copy:
+    src: "{{ dotfiles_directory }}/{{ item }}"
+    dest: "{{ artifact_directory }}"
+  with_items:
+    - awesome
+    - conky
+    - fish
+    - nvim
+    - picom
+    - rofi

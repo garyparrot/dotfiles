@@ -1,0 +1,9 @@
+---
+home: "{{ ansible_env.HOME }}"
+xdg_config: "{{ lookup('env', 'XDG_CONFIG_HOME') | default(ansible_env.HOME, true) }}/.config"
+xdg_cache: "{{ lookup('env', 'XDG_CACHE_HOME') | default(ansible_env.HOME, true) }}/.cache"
+xdg_data: "{{ lookup('env', 'XDG_DATA_HOME') | default(ansible_env.HOME, true) }}/.local/share"
+dotfiles_directory: "{{ playbook_dir }}/dotfiles"
+artifact_directory: "{{ xdg_data }}/dotfiles/artifact"
+production_directory: "{{ xdg_data }}/dotfiles/production"
+

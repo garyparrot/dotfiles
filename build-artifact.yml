@@ -1,0 +1,6 @@
+---
+- name: "[Build] Artifacts"
+  hosts: local
+  roles:
+    - common
+    - build
