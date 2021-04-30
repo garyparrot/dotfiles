@@ -1,0 +1,4 @@
+\setenv PSQL_EDITOR /usr/bin/nvim
+\set PROMPT1 '   %n  爵%m:%>   %/ %x%#\n  '
+\set PROMPT2 '  '
+\set PROMPT3 'STDIN  '

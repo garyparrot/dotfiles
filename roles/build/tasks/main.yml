@@ -18,3 +18,25 @@
     - rofi
     - omf
     - neofetch
+    - "@home"
+
+- name: "Find all template files"
+  find:
+    path: "{{ artifact_directory }}"
+    hidden: yes
+    patterns: "*.j2"
+    recurse: yes
+  register: template_files
+
+- name: "Handling template rendering"
+  template:
+    src: "{{ item.path }}"
+    dest: "{{ item.path | regex_replace('.j2$') }}"
+  with_items: "{{ template_files.files }}"
+
+- name: "remove template files from artifact"
+  file:
+    path: "{{item.path }}"
+    state: absent
+  with_items: "{{ template_files.files }}"
+

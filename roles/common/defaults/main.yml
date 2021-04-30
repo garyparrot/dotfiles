@@ -7,3 +7,6 @@ dotfiles_directory: "{{ playbook_dir }}/dotfiles"
 artifact_directory: "{{ xdg_data }}/dotfiles/artifact"
 production_directory: "{{ xdg_data }}/dotfiles/production"
 
+GITCONFIG:
+  EMAIL: 'someone@somewhere'
+  NAME: 'user'

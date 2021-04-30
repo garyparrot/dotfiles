@@ -7,6 +7,7 @@
 
 - name: list artifacts
   find:
+    hidden: yes
     paths: "{{ artifact_directory }}"
     recurse: no
     file_type: directory
@@ -33,3 +34,17 @@
     - rofi
     - omf
     - neofetch
+
+- name: list @home file
+  find:
+    paths: "{{ production_directory }}/@home"
+    hidden: yes
+    recurse: no
+  register: files
+
+- name: "@home"
+  file:
+    state: link
+    src: "{{ item.path }}"
+    dest: "{{ home }}/{{ item.path | basename }}"
+  with_items: "{{ files.files }}"
