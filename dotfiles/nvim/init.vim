@@ -33,7 +33,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'psliwka/vim-smoothie'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'file:///home/garyparrot/Programming/vim-airline-RedDope'
+Plug 'garyparrot/RedDope'
 Plug 'morhetz/gruvbox'
 Plug 'pangloss/vim-javascript'
 Plug 'pearofducks/ansible-vim'
